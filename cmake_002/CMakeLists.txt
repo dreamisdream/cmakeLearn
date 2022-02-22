@@ -1,9 +1,7 @@
 cmake_minimum_required(VERSION 3.12)
 
-aux_source_directory(. DIR_SRCS)
+project(cmake_002)
 
-add_subdirectory(json)
+aux_source_directory(./src DIR_SRCS)
 
-add_executable(cmake_002 src/main.cpp)
-
-target_link_libraries(cmake_002 json)
+add_executable(cmake_002 ${DIR_SRCS})

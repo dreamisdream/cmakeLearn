@@ -1,33 +1,20 @@
-#include "../ext/jsoncpp/inc/json.h"
+#include "../math/mathfunction.h"
+
 #include <iostream>
 #include <fstream>
 
 using namespace std;
-using namespace Json;
 
-int main() 
+int main(int argc, char *argv[])
 {
-    ifstream ifile("d://confwrite.json");
-   
-    Json::Value root;
-    root["encoding"] = "utf-8";
-    root["plug-ins"][0] = "c";
-    root["plug-ins"][1] = "c++";
-    root["plug-ins"][2] = "python";
-    root["plug-ins"][3] = "lua";
-    
-    Json::Value partner;
-    partner["name"] = "tony";
-    partner["sex"] = "female";
-    partner["age"] = 15;
-
-    root["partner"] = partner;
-    Json::FastWriter fw;
-    cout << fw.write(root) << endl;
-    
-    ofstream ofs;
-    ofs.open("confWirte.json");
-    ofs.write(fw.write(root).c_str(), fw.write(root).size());
-    ofs.close();
+    if (argc < 3){
+        printf("Usage: %s base exponent \n", argv[0]);
+        return 1;
+    }
+    double base = atof(argv[1]);
+    int exponent = atoi(argv[2]);
+    double result = power(base, exponent);
+    printf("%g ^ %d is %g\n", base, exponent, result);
     return 0;
+
 }

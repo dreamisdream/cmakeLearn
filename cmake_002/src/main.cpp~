@@ -1,0 +1,23 @@
+
+#include <iostream>
+#include <cstdio>
+#include <cstdlib>
+
+#include "power.h"
+
+using namespace std;
+
+int main(int argc, char *argv[]) 
+{
+    if (argc < 3) {
+        cout << "Usage: " << argv[0] << " base exponent" << endl;
+        return 1;
+    }
+
+    double base = atof(argv[1]);
+    double exponent = atof(argv[2]);
+    double result = power(base, exponent);
+    printf("%g ^ %d is %g", base, exponent, result);
+    getchar();
+    return 0;
+}
