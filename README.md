@@ -21,4 +21,5 @@ ubuntu 20.04 + cmake 3.12
 > 项目均已在此环境下编译通过
 
 
+[test pull requests]
 (学习链接)[https://www.hahack.com/codes/cmake/]
